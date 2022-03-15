@@ -1,5 +1,5 @@
 const ContactListEntry = ({ contactInfo, selectedContact, setSelectedContact, editMode }) => {
-  const { firstName, lastName, emailAddress, phoneNumber } = contactInfo;
+  const { firstName, lastName } = contactInfo;
 
   // Didn't want to spend a ton of time on getting hover to work perfectly
   // Known issue that background gets colored even when disabled
@@ -11,11 +11,11 @@ const ContactListEntry = ({ contactInfo, selectedContact, setSelectedContact, ed
       className="john"
       onClick={() => {
         if (!editMode) {
-          setSelectedContact(contactInfo)
+          setSelectedContact(contactInfo.id)
         }
       }}
       style={{
-        background: selectedContact.firstName === contactInfo.firstName ? '#B4D5FF' : '',
+        background: selectedContact === contactInfo.id ? '#B4D5FF' : '',
         color: editMode ? 'grey' : 'black',
         cursor: editMode ? 'default' : 'pointer',
       }}
