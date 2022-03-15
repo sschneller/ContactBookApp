@@ -1,10 +1,9 @@
-import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { Card, Pagination } from 'react-bootstrap';
 import chunk from 'lodash/chunk';
 import ContactListEntry from './ContactListEntry';
 
-const ContactList = ({ contactList }) => {
+const ContactList = ({ contactList, selectedContact, setSelectedContact, editMode }) => {
   const [activePage, setActivePage] = useState(1);
 
   const chunkedList = chunk(contactList, 5);
@@ -30,11 +29,11 @@ const ContactList = ({ contactList }) => {
   return (
     <Card>
       <Card.Body>
-        <div style={{ height: '40vh' }}>
+        <div style={{ height: '40vh', overflow: 'auto' }}>
           {
             chunkedList &&
             chunkedList[activePage - 1] &&
-            chunkedList[activePage - 1].map((contactInfo) => <ContactListEntry contactInfo={contactInfo} />)
+            chunkedList[activePage - 1].map((contactInfo) => <ContactListEntry contactInfo={contactInfo} selectedContact={selectedContact} setSelectedContact={setSelectedContact} editMode={editMode} />)
           }
         </div>
         <Pagination>
@@ -45,15 +44,6 @@ const ContactList = ({ contactList }) => {
       </Card.Body>
     </Card>
   );
-};
-
-ContactList.propTypes = {
-  contactList: PropTypes.arrayOf(PropTypes.shape({
-    firstName: PropTypes.string,
-    lastName: PropTypes.string,
-    emailAddress: PropTypes.string,
-    phoneNumber: PropTypes.string,
-  })).isRequired,
 };
 
 export default ContactList;
