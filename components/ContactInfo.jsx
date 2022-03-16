@@ -5,6 +5,7 @@ import { Card, Col, Form, FormCheck, Row } from 'react-bootstrap';
  * ContactInfo controls the form that allows the rendering and editing of contact information.
  **/
 const ContactInfo = ({ selectedContact, contactList, editMode, setEditMode, stateMethods }) => {
+  // Prevent loading until state has loaded
   if (!contactList || !selectedContact || !contactList[selectedContact]) return <></>;
   
   const handleChange = (field, value) => {
@@ -17,7 +18,7 @@ const ContactInfo = ({ selectedContact, contactList, editMode, setEditMode, stat
       <Card.Body>
         <Row>
           <Col sm={1}>
-            <Image src="/fbprofile.jpg" alt="me" width="100%" height="100%" />
+            <Image src="/avatar.png" alt="me" width="100%" height="100%" />
           </Col>
           <Col sm={8}>
             {editMode ? (
