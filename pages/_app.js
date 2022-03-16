@@ -1,5 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.css';
-import '../components/ContactBook/ContactBook.css';
 
 import { useEffect } from "react";
 

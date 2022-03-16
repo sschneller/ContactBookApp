@@ -1,0 +1,35 @@
+.entry {
+  font-size: large;
+  padding-left: 10px;
+  border-radius: 5px;
+}
+
+.entrySelected {
+  background-color: #B4D5FF !important;
+}
+
+.entryEnabled {
+  color: black;
+  cursor: pointer;
+}
+
+.entryEnabled:hover {
+  background-color: aliceblue;
+}
+
+.entryEnabled button {
+  background: white;
+}
+
+.entryEnabled button:hover {
+  background: lightgrey;
+}
+
+.entryDisabled {
+  color: grey;
+  cursor: default;
+}
+
+.entryDisabled:hover {
+  
+}

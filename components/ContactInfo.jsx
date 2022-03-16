@@ -1,6 +1,9 @@
 import Image from 'next/image';
 import { Card, Col, Form, FormCheck, Row } from 'react-bootstrap';
 
+/**
+ * ContactInfo controls the form that allows the rendering and editing of contact information.
+ **/
 const ContactInfo = ({ selectedContact, contactList, editMode, setEditMode, stateMethods }) => {
   if (!contactList || !selectedContact || !contactList[selectedContact]) return <></>;
   

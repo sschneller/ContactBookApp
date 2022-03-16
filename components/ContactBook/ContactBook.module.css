@@ -1,0 +1,13 @@
+.topBar {
+    height: 4.5vh;
+    background: #9AA;
+    margin-bottom: 0.5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.h90wfull {
+    height: 90vh;
+    width: 100%;
+}
